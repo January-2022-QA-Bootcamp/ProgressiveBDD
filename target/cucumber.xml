@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="28.325">
+<testcase classname="Validating Auto Insurance Feature" name="Validating Landing Page" time="11.024">
+<system-out><![CDATA[Given user select auto......................................................passed
+When user input '11423' in zipcode..........................................passed
+And user clicks startquote button...........................................passed
+Then user will navigate to personal details page............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating Auto Insurance Feature" name="Validating Landing Page 2" time="8.738">
+<system-out><![CDATA[Given user select auto......................................................passed
+When user input '10467' in zipcode..........................................passed
+And user clicks startquote button...........................................passed
+Then user will navigate to personal details page............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating Auto Insurance Feature" name="Validating Landing Page 3" time="8.353">
+<system-out><![CDATA[Given user select auto......................................................passed
+When user input '11418' in zipcode..........................................passed
+And user clicks startquote button...........................................passed
+Then user will navigate to personal details page............................passed
+]]></system-out>
+</testcase>
+</testsuite>

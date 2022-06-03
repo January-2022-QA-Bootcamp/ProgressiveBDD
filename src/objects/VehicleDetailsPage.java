@@ -1,0 +1,158 @@
+package objects;
+
+import java.util.Map;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import commons.CommonActions;
+import dataProvider.AutoData;
+
+public class VehicleDetailsPage {
+
+	public VehicleDetailsPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(id = "VehiclesNew_embedded_questions_list_Year")
+	WebElement yearSelectionElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_Make")
+	WebElement makeSelectionElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_Model")
+	WebElement modelSelectionElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_BodyStyle")
+	WebElement bodyTypeSelectionElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_VehicleUse")
+	WebElement primaryUseElement;
+	@FindBy(tagName = "checkbox-input")
+	WebElement rideShareCheckElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_OwnOrLease")
+	WebElement ownOrLeasElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_LengthOfOwnership")
+	WebElement ownedVehicleDurationElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_AntitheftDevice")
+	WebElement securityAlarmElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_DayTimeRunningLights_N")
+	WebElement dayTimeLampNElement;
+	@FindBy(id = "VehiclesNew_embedded_questions_list_DayTimeRunningLights_Y")
+	WebElement dayTimeLampYElement;
+	@FindBy(xpath = "//button[text()='Done']")
+	WebElement doneBtnElement;
+	@FindBy(xpath = "//button[text()='Continue']")
+	WebElement continueBtnElement;
+
+	public void selectVehicleYear(CommonActions commonActions, String year) {
+		commonActions.selectByValue(yearSelectionElement, year);
+	}
+
+	public void selectVehicleMake(CommonActions commonActions, String make) {
+		commonActions.selectByValue(makeSelectionElement, make);
+	}
+
+	public void selectVehicleModel(CommonActions commonActions, String model) {
+		commonActions.selectByValue(modelSelectionElement, model);
+	}
+
+	public void selectVehicleBodyType(CommonActions commonActions, String bodyType) {
+		if (bodyType != null && bodyType.length() > 1) {
+			commonActions.selectByValue(bodyTypeSelectionElement, bodyType);
+		}
+	}
+
+	public void selectVehiclePrimaryUse(CommonActions commonActions, String primaryUse) {
+		commonActions.selectByValue(primaryUseElement, primaryUse);
+	}
+
+	public void checkRideShare(CommonActions commonActions, boolean isVehicleUseForRideShare) {
+		boolean status = commonActions.isSelected(rideShareCheckElement);
+		if (!status && isVehicleUseForRideShare) {
+			commonActions.click(rideShareCheckElement);
+		} else if (status) {
+			commonActions.logEventAndFail("Deafult status of " + rideShareCheckElement + " : is selected");
+		}
+	}
+
+	public void selectVehicleOwnOrLease(CommonActions commonActions, String ownOrLease) {
+		commonActions.selectByValue(ownOrLeasElement, ownOrLease);
+	}
+
+	public void selectVehicleOwnedDuration(CommonActions commonActions, String duration) {
+		commonActions.selectByValue(ownedVehicleDurationElement, duration);
+	}
+
+	public void selectVehicleAlarmType(CommonActions commonActions, String alarmType) {
+		commonActions.selectByValue(securityAlarmElement, alarmType);
+	}
+
+	public void checkVehicleDaytimeLamp(CommonActions commonActions, boolean isPresent, boolean isDayTimeLamp) {
+		if (isPresent) {
+			boolean status = commonActions.isSelected(dayTimeLampYElement);
+			if (status && isDayTimeLamp) {
+				// commonActions.click(dayTimeLampYElement);
+			} else if (status && !isDayTimeLamp) {
+				commonActions.click(dayTimeLampNElement);
+			} else {
+				commonActions.logEventAndFail("Daytime Lamp is not in selected status");
+			}
+		}
+	}
+
+	public void clickDoneBtn(CommonActions commonActions) {
+		commonActions.click(doneBtnElement);
+	}
+
+	public void clickContinueBtn(CommonActions commonActions) {
+		commonActions.click(continueBtnElement);
+	}
+
+	public void vehicleDetailsPageSteps(CommonActions commonActions, String vehicleYear, String vehicleMake,
+			String vehicleModel, String bodyType, String primaryUse, boolean isRideShare, String ownOrLease,
+			String ownedDuration, String alarmType, boolean isEnable, boolean isDayLightLamp) {
+
+		selectVehicleYear(commonActions, vehicleYear);
+		selectVehicleMake(commonActions, vehicleMake);
+		selectVehicleModel(commonActions, vehicleModel);
+		selectVehicleBodyType(commonActions, bodyType);
+		selectVehiclePrimaryUse(commonActions, primaryUse);
+		checkRideShare(commonActions, isRideShare);
+		selectVehicleOwnOrLease(commonActions, ownOrLease);
+		selectVehicleOwnedDuration(commonActions, ownedDuration);
+		selectVehicleAlarmType(commonActions, alarmType);
+		checkVehicleDaytimeLamp(commonActions, isEnable, isDayLightLamp);
+		clickDoneBtn(commonActions);
+		clickContinueBtn(commonActions);
+	}
+	
+	public void vehicleDetailsPageSteps(CommonActions commonActions, AutoData autoData) {
+
+		selectVehicleYear(commonActions, autoData.getvYear());
+		selectVehicleMake(commonActions, autoData.getvMake());
+		selectVehicleModel(commonActions, autoData.getvModel());
+		selectVehicleBodyType(commonActions, autoData.getBodyType());
+		selectVehiclePrimaryUse(commonActions, autoData.getPrimaryUse());
+		checkRideShare(commonActions, autoData.isRideShare());
+		selectVehicleOwnOrLease(commonActions, autoData.getOwnOrLease());
+		selectVehicleOwnedDuration(commonActions, autoData.getOwnedDuration());
+		selectVehicleAlarmType(commonActions, autoData.getAlarmType());
+		checkVehicleDaytimeLamp(commonActions, autoData.isEnable(), autoData.isDayTimeLamp());
+		clickDoneBtn(commonActions);
+		clickContinueBtn(commonActions);
+	}
+	
+	public void vehicleDetailsPageSteps(CommonActions commonActions, Map<String, String> map) {
+
+		selectVehicleYear(commonActions, map.get("Vehicle Year"));
+		selectVehicleMake(commonActions, map.get("Vehicle Make"));
+		selectVehicleModel(commonActions, map.get("Vehicle Model"));
+		selectVehicleBodyType(commonActions, map.get("Body Type"));
+		selectVehiclePrimaryUse(commonActions, map.get("Priary Use"));
+		checkRideShare(commonActions, Boolean.parseBoolean(map.get("Is Ride Share?")));
+		selectVehicleOwnOrLease(commonActions, map.get("Own Or Lease"));
+		selectVehicleOwnedDuration(commonActions, map.get("Owend Duration"));
+		selectVehicleAlarmType(commonActions, map.get("Alarm Type"));
+		checkVehicleDaytimeLamp(commonActions, Boolean.parseBoolean(map.get("Is Day Lamp Enabled?")), Boolean.parseBoolean(map.get("Is Daytime Lamp")));
+		clickDoneBtn(commonActions);
+		clickContinueBtn(commonActions);
+	}
+}

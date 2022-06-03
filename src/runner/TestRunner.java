@@ -5,8 +5,13 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"features"},
-					glue = {"steps"})
+@CucumberOptions(tags = " @dataDriven",
+				features = { "features" },
+				glue = { "base","steps" },
+				dryRun = false,
+				monochrome = true,
+				plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json", "junit:target/cucumber.xml"}
+				)
 public class TestRunner {
 
 }

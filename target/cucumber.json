@@ -1,0 +1,307 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2022-06-03T03:21:32.908Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5101000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.setup()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Validating Landing Page",
+        "description": "",
+        "id": "validating-auto-insurance-feature;validating-landing-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 726000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.closingBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 248000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user select auto",
+            "match": {
+              "location": "steps.AutoSteps.user_select_auto()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 135000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user input \u002711423\u0027 in zipcode",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u002711423\u0027",
+                  "offset": 11
+                }
+              ],
+              "location": "steps.AutoSteps.user_input_in_zipcode(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 162000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks startquote button",
+            "match": {
+              "location": "steps.AutoSteps.user_clicks_startquote_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4563000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user will navigate to personal details page",
+            "match": {
+              "location": "steps.AutoSteps.user_will_navigate_to_personal_details_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@xvp-2034"
+          },
+          {
+            "name": "@dataDriven"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-06-03T03:21:43.940Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2939000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.setup()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Validating Landing Page",
+        "description": "",
+        "id": "validating-auto-insurance-feature;validating-landing-page;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 713000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.closingBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 263000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user select auto",
+            "match": {
+              "location": "steps.AutoSteps.user_select_auto()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 655000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user input \u002710467\u0027 in zipcode",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u002710467\u0027",
+                  "offset": 11
+                }
+              ],
+              "location": "steps.AutoSteps.user_input_in_zipcode(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 159000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks startquote button",
+            "match": {
+              "location": "steps.AutoSteps.user_clicks_startquote_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4007000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user will navigate to personal details page",
+            "match": {
+              "location": "steps.AutoSteps.user_will_navigate_to_personal_details_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@xvp-2034"
+          },
+          {
+            "name": "@dataDriven"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-06-03T03:21:52.681Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3193000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.setup()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Validating Landing Page",
+        "description": "",
+        "id": "validating-auto-insurance-feature;validating-landing-page;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 695000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "base.HookClass.closingBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 185000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user select auto",
+            "match": {
+              "location": "steps.AutoSteps.user_select_auto()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 125000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user input \u002711418\u0027 in zipcode",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u002711418\u0027",
+                  "offset": 11
+                }
+              ],
+              "location": "steps.AutoSteps.user_input_in_zipcode(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 131000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks startquote button",
+            "match": {
+              "location": "steps.AutoSteps.user_clicks_startquote_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4020000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user will navigate to personal details page",
+            "match": {
+              "location": "steps.AutoSteps.user_will_navigate_to_personal_details_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@xvp-2034"
+          },
+          {
+            "name": "@dataDriven"
+          }
+        ]
+      }
+    ],
+    "name": "Validating Auto Insurance Feature",
+    "description": "",
+    "id": "validating-auto-insurance-feature",
+    "keyword": "Feature",
+    "uri": "file:features/AutoInsurance.feature",
+    "tags": [
+      {
+        "name": "@xvp-2034",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
